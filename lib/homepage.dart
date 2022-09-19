@@ -138,9 +138,13 @@ class _HomepageState extends State<Homepage> {
               InkWell(
                 onTap: () {
                   setState(() {
-                    int min = 2, max = 90;
-                    text1 = randomNumber(min, max).toString();
-                    print(text1);
+                    int min = int.parse(textEditingController1.text);
+                    int max = int.parse(textEditingController2.text);
+                    try {
+                      text1 = (min + Random().nextInt(max - min)).toString();
+                    } catch (e) {
+                      text1 = "1";
+                    }
                   });
                 },
                 child: Container(
