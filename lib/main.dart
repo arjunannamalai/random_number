@@ -17,6 +17,20 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return Homepage();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark().copyWith(
+        appBarTheme: AppBarTheme(
+          color: Colors.black,
+          //titleTextStyle: TextStyle(color: Colors.white),
+        ),
+        scaffoldBackgroundColor: Colors.black,
+        textTheme: TextTheme(),
+        //text
+      ),
+      //themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
+      home: Homepage(),
+    );
   }
 }
